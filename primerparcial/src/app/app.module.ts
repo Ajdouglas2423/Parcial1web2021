@@ -1,26 +1,35 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RegistrarComponent } from './registrar/registrar.component';
-import { PersonaConsultaComponent } from './hotel/persona-consulta/persona-consulta.component';
-import { PersonaRegistroComponent } from './hotel/persona-registro/persona-registro.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { PersonaService } from './services/persona.service'; 
+import { PersonaConsultaComponent } from './hotel/persona-consulta/persona-consulta.component';
+import { PersonaRegistroComponent } from './hotel/persona-registro/persona-registro.component';
+import { AppRoutingModule } from './app-routing.module';
+import { PersonaService } from './services/persona.service';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegistrarComponent,
+    NavMenuComponent,
+    HomeComponent,
     PersonaConsultaComponent,
     PersonaRegistroComponent,
-    NavMenuComponent,
-    HomeComponent
+   
   ],
   imports: [
-    BrowserModule,
+    ReactiveFormsModule,
+    BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
+    HttpClientModule,
+    FormsModule,
+    RouterModule.forRoot([
+      { path: '', component: HomeComponent, pathMatch: 'full' },
+    ]),
     AppRoutingModule
   ],
   providers: [PersonaService],
