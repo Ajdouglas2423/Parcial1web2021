@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PersonaService } from 'src/app/services/persona.service';
+import { Persona } from '../models/persona';
 
 @Component({
   selector: 'app-persona-consulta',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonaConsultaComponent implements OnInit {
 
-  constructor() { }
+  personas: Persona[];
+  searchText:string;
 
-  ngOnInit(): void {
+  constructor(private personaService: PersonaService) { }
+
+  ngOnInit() {
+    this.get();
+  }
+
+  get() {
+    this.personas = this.personaService.get();
   }
 
 }
