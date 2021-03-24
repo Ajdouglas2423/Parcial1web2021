@@ -8,6 +8,7 @@ import { PersonaConsultaComponent } from './hotel/persona-consulta/persona-consu
 import { PersonaRegistroComponent } from './hotel/persona-registro/persona-registro.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
+import { PersonaService } from './services/persona.service'; 
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { HomeComponent } from './home/home.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [PersonaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
