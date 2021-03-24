@@ -1,1 +1,28 @@
-<p>persona-consulta works!</p>
+<div class="row">
+    <div class="col-6">
+    <input [(ngModel)]="searchText" type="text" class="formcontrol" placeholder="Type to filter">
+    </div>
+    </div>
+    <hr>
+    <table class="table table-striped" *ngIf='personas && personas.length'>
+    <thead>
+    <tr>
+    <th scope="col">#</th>
+    <th scope="col">identificación</th>
+    <th scope="col">Nombres</th>
+    <th scope="col">Apellidos</th>
+    <th scope="col">Hotel</th>
+    <th scope="col">Fecha Hospedaje</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let persona of personas; index as i ">
+    <th scope="row">{{ i + 1 }}</th>
+    <td>{{ persona.identificacion }} </td>
+    <td>{{ persona.nombres }}</td>
+    <td>{{ persona.apellidos }}</td>
+    <td>{{ persona.hotel }}</td>
+    <td>{{ persona.fechahospedaje }}</td>
+    </tr>
+    </tbody>
+    </table>
