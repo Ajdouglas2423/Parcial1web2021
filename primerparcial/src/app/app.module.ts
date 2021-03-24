@@ -7,6 +7,7 @@ import { RegistrarComponent } from './registrar/registrar.component';
 import { PersonaConsultaComponent } from './hotel/persona-consulta/persona-consulta.component';
 import { PersonaRegistroComponent } from './hotel/persona-registro/persona-registro.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
     RegistrarComponent,
     PersonaConsultaComponent,
     PersonaRegistroComponent,
-    NavMenuComponent
+    NavMenuComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
