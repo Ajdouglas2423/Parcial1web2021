@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { RegistrarComponent } from './registrar/registrar.component';
 import { PersonaConsultaComponent } from './hotel/persona-consulta/persona-consulta.component';
 import { PersonaRegistroComponent } from './hotel/persona-registro/persona-registro.component';
+import { NavMenuComponent } from './nav-menu/nav-menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrarComponent,
     PersonaConsultaComponent,
-    PersonaRegistroComponent
+    PersonaRegistroComponent,
+    NavMenuComponent
   ],
   imports: [
     BrowserModule,
